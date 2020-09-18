@@ -10,52 +10,93 @@ import java.util.Map;
  * */
 public class QueryParameter {
 
-    public String getFileName() {		
+	private String fileName, baseQuery, queryString, query_type;
+	private List<Restriction> restrictions;
+	private List<String> logicalOperators, fields, groupByFields, orderByFields;
+	private List<AggregateFunction> aggregateFunctions;
+
+    public String getFileName() {
         // TODO Auto-generated method stub
-		return null;
+		return fileName;
 	}
 
 	public List<String> getFields() {
 		// TODO Auto-generated method stub
-		return null;
+		return fields;
 	}
 
 	public List<Restriction> getRestrictions() {
 		// TODO Auto-generated method stub
-		return null;
+		return restrictions;
 	}
 
 	public String getBaseQuery() {
 		// TODO Auto-generated method stub
-		return null;
+		return baseQuery;
 	}
 
 	public List<AggregateFunction> getAggregateFunctions() {
 		// TODO Auto-generated method stub
-		return null;
+		return aggregateFunctions;
 	}
 
 	public List<String> getLogicalOperators() {
 		// TODO Auto-generated method stub
-		return null;
+		return logicalOperators;
 	}
 
 	public List<String> getGroupByFields() {
 		// TODO Auto-generated method stub
-		return null;
+		return groupByFields;
 	}
 
 	public List<String> getOrderByFields() {
 		// TODO Auto-generated method stub
-		return null;
+		return orderByFields;
 	}
 
 	public String getQUERY_TYPE() {
 		// TODO Auto-generated method stub
-		return null;
+		return query_type;
 	}
 
-		
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
+	}
 
-	
+	public void setBaseQuery(String baseQuery) {
+		this.baseQuery = baseQuery;
+	}
+
+	public void setQueryString(String queryString) {
+		this.queryString = queryString;
+	}
+
+	public void setQuery_type(String query_type) {
+		this.query_type = query_type;
+	}
+
+	public void setRestrictions(List<Restriction> restrictions) {
+		this.restrictions = restrictions;
+	}
+
+	public void setLogicalOperators(List<String> logicalOperators) {
+		this.logicalOperators = logicalOperators;
+	}
+
+	public void setFields(List<String> fields) {
+		this.fields = fields;
+	}
+
+	public void setGroupByFields(List<String> groupByFields) {
+		this.groupByFields = groupByFields;
+	}
+
+	public void setOrderByFields(List<String> orderByFields) {
+		this.orderByFields = orderByFields;
+	}
+
+	public void setAggregateFunctions(List<AggregateFunction> aggregateFunctions) {
+		this.aggregateFunctions = aggregateFunctions;
+	}
 }

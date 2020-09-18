@@ -7,6 +7,11 @@ public class AggregateFunction {
 
 	private String function, field;
 
+	public AggregateFunction(String function, String field) {
+		this.function = function;
+		this.field = field;
+	}
+
 	public String getFunction() {
 		// TODO Auto-generated method stub
 		return function;
