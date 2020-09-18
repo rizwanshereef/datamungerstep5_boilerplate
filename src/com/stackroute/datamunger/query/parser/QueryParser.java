@@ -35,7 +35,7 @@ public class QueryParser {
 			String strFileName = strFrom.split(" ")[0].trim();
 			return strFileName;
 		}
-		
+
 		/*
 		 * extract the order by fields from the query string. Please note that we will
 		 * need to extract the field(s) after "order by" clause in the query, if at all
@@ -128,7 +128,7 @@ public class QueryParser {
 					return null;
 				}
 			}
-		
+
 		/*
 		 * extract the selected fields from the query string. Please note that we will
 		 * need to extract the field(s) after "select" clause followed by a space from
@@ -159,26 +159,26 @@ public class QueryParser {
 			return list;
 		}
 	}
-		
-		
+
+
 		/*
 		 * extract the conditions from the query string(if exists). for each condition,
-		 * we need to capture the following: 
-		 * 1. Name of field 
-		 * 2. condition 
+		 * we need to capture the following:
+		 * 1. Name of field
+		 * 2. condition
 		 * 3. value
-		 * 
+		 *
 		 * For eg: select city,winner,team1,team2,player_of_match from data/ipl.csv
 		 * where season >= 2008 or toss_decision != bat
-		 * 
-		 * here, for the first condition, "season>=2008" we need to capture: 
-		 * 1. Name of field: season 
-		 * 2. condition: >= 
+		 *
+		 * here, for the first condition, "season>=2008" we need to capture:
+		 * 1. Name of field: season
+		 * 2. condition: >=
 		 * 3. value: 2008
-		 * 
+		 *
 		 * the query might contain multiple conditions separated by OR/AND operators.
 		 * Please consider this while parsing the conditions.
-		 * 
+		 *
 		 */
 		public List<Restriction> getRestrictions(String queryString)
 		{
@@ -213,13 +213,13 @@ public class QueryParser {
 			}
 			return restrictionList;
 		}
-		
+
 		/*
 		 * extract the logical operators(AND/OR) from the query, if at all it is
 		 * present. For eg: select city,winner,team1,team2,player_of_match from
 		 * data/ipl.csv where season >= 2008 or toss_decision != bat and city =
 		 * bangalore
-		 * 
+		 *
 		 * the query mentioned above in the example should return a List of Strings
 		 * containing [or,and]
 		 */
@@ -252,13 +252,13 @@ public class QueryParser {
 		 * functions can determined if we have either "min" or "max" or "sum" or "count"
 		 * or "avg" followed by opening braces"(" after "select" clause in the query
 		 * string. in case it is present, then we will have to extract the same. For
-		 * each aggregate functions, we need to know the following: 
-		 * 1. type of aggregate function(min/max/count/sum/avg) 
+		 * each aggregate functions, we need to know the following:
+		 * 1. type of aggregate function(min/max/count/sum/avg)
 		 * 2. field on which the aggregate function is being applied
-		 * 
+		 *
 		 * Please note that more than one aggregate function can be present in a query
-		 * 
-		 * 
+		 *
+		 *
 		 */
 		public ArrayList<AggregateFunction> getAggregateFunctions(String queryString) {
 			String strFrom = queryString.toLowerCase().split("from")[0].trim();
